@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue实例暴露的接口</title>
+</head>
+<body>
+	<div id="app">
+		{{message}}
+		<br>
+		{{date}}
+	</div>
+	<button onclick="add()">按钮+1</button>
+	<script src="vue.js"></script>
+	<script>
+		var app = new Vue({
+			el:"#app",
+			data:{
+				message:1,
+				date:'2016-10-11'
+			}
+		});
+		function add(){
+			app.$data.message++;
+		}
+		function test(){
+			console.log(app.message);
+			console.log(app.date);
+			console.log(app.$data);//是vm的data属性
+			console.log(app.$data.message);
+			console.log(app.$data.date);
+			console.log(app.$el);//是vm的el属性所指向的dom结点
+		}
+		test();
+		app.$watch("message",function(newVal,oldVal){
+			alert(newVal);
+			alert(oldVal);
+		});
+	</script>
+</body>
+</html>
