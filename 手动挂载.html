@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>手动挂载</title>
+</head>
+<body>
+	<div id="app">
+		{{a}}
+	</div>
+	<button onclick="test()">手动挂载</button>
+	<script src="vue.js"></script>
+	<script>
+		app = new Vue({
+			data:{
+				a:1
+			}
+		})
+		function test(){
+			app.$mount("#app");
+		}
+		//当Vue实例没有el属性时，则该实例尚没有挂载到某个dom中，假如需要延迟挂载，可以在之后手动调用vm.$mount()方法来挂载。
+	</script>
+</body>
+</html>
