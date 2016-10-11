@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>键盘事件</title>
+</head>
+<body>
+	<div id="app">
+		{{message}}
+		<input type="text" v-on:keypress.enter="add" @keypress.space="minus">
+	</div>
+	<script src="vue.js"></script>
+	<script>
+		new Vue({
+			el:"#app",
+			data:{
+				message:1
+			},
+			methods:{
+				add:function(){
+					this.message++;
+				},
+				minus:function(){
+					this.message--;
+				}
+			}
+		})
+	</script>
+</body>
+</html>
