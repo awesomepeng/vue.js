@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>处理用户输入数据</title>
+</head>
+<body>
+	<div id="app">
+		{{message}}
+		<input type="text" v-model="message">
+		<button @click="add">值+1</button>
+		<button @click="minus">值-1</button>
+		<button @click="reset">重置归零</button>
+	</div>
+	<script src="vue.js"></script>
+	<script>
+		new Vue({
+			el:"#app",
+			data:{
+				message:1
+			},
+			methods:{
+				add:function(){
+					this.message++;
+				},
+				minus:function(){
+					this.message--;
+				},
+				reset:function(){
+					this.message = 0;
+				}
+			}
+		})
+	</script>
+</body>
+</html>
