@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>单次插值</title>
+</head>
+<body>
+	<div id="app">
+		{{#text}}
+		<input type="text" v-model="text">
+	</div>
+	<script src="vue.js"></script>
+	<script>
+		var textInnerHtml = "hello world";
+		var app = new Vue({
+			el:"#app",
+			data:{
+				text:textInnerHtml
+			}
+		});
+	</script>
+</body>
+</html>
