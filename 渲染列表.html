@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>利用vue.js渲染列表</title>
+</head>
+<body>
+	<ul id="list">
+		<li v-for="book in books">
+			{{"name:"+book.name+";price"+book.price+"."}}
+		</li>
+	</ul>
+	<script src="vue.js"></script>
+	<script>
+		var list = new Vue({
+			el:"#list",
+			data:{books:[{
+				name:"bookname1",
+				price:"price1"
+			},{
+				name:"bookname2",
+				price:"price2"
+			},{
+				name:"bookname3",
+				price:"price3"
+			}]}
+		});
+	</script>
+</body>
+</html>
