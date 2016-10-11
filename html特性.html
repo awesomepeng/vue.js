@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>html特性</title>
+</head>
+<body>
+	<ul id="app">
+		<li v-for="item in items">
+			<span id="item-{{item.itemId}}">
+				{{item.itemName}}
+				<br>
+				{{$index}}
+				<br>
+				{{item.itemId}}
+			</span>
+		</li>
+	</ul>
+	<script src="vue.js"></script>
+	<script>
+		var app = new Vue({
+			el:"#app",
+			data:{
+			　　items: [{
+			　　    itemId: "itemId01 ",
+			　　    itemName: "itemName01 ",
+			　　    itemDesc: "itemDesc01 "
+			　　}, {
+			　　    itemId: "itemId02 ",
+			　　    itemName: "itemName02 ",
+			　　    itemDesc: "itemDesc02 "
+			　　}, {
+			　　    itemId: "itemId03 ",
+			　　    itemName: "itemName03 ",
+			　　    itemDesc: "itemDesc03 "
+			　　}, ]
+			}
+		});
+	</script>
+</body>
+</html>
