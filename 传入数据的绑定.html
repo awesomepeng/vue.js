@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>传入数据的绑定</title>
+</head>
+<body>
+	<div id="app">
+		{{a}}
+	</div>
+	<button onclick="add()">+1</button>
+	<script src="vue.js"></script>
+	<script>
+		var obj = {a: 1}
+		var vm = new Vue({
+			el: "#app",
+			data: obj
+		})
+		function add(){
+			//obj.a++;
+			//vm.a++;
+			obj.b=1;
+		}
+ 		function test(){
+ 			if(vm.b===obj.b){
+ 				console.log('true');
+ 			}else{
+ 				console.log('flase');
+ 			}
+ 		}
+ 		test();
+	</script>  
+
+</body>
+</html>
