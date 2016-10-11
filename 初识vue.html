@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>初识vue.js</title>
+</head>
+<body>
+	<div id="app">{{message}}</div>
+	<script src="vue.js"></script>
+	<script>
+		var messageData = "hello vue.js!"
+		var app = new Vue({
+			el:"#app",
+			data:{
+				message:messageData
+			}
+		});
+		//1、什么是Vue.js？
+
+//众所周知，最近几年前端发展非常的迅猛，除各种框架如：backbone、angular、reactjs外，还有模块化开发思想的实现库：sea.js 、require.js 、webpack以及前端上线部署集成工具如： grunt、gulp、fis等。
+
+//Vue.js与reactjs相似，是一个构建数据驱动的 web 界面的库，一个注重ViewModel的典型的MVVM框架。Vue.js 的目标是通过尽可能简单的 API 实现响应的数据绑定和组合的视图组件。
+
+//Vue.js 自身不是一个全能框架——它只聚焦于视图层。因此它非常容易学习，非常容易与其它库或已有项目整合。另一方面，在与相关工具和支持库一起使用时，Vue.js 也能完美地驱动复杂的单页应用。
+
+//2、Vue.js的独特之处
+
+//2.1 响应的数据绑定
+
+//Vue.js 的核心是一个响应的数据绑定系统，它让数据与 DOM 保持同步非常简单。在使用 jQuery 手工操作 DOM 时，我们的代码常常是命令式的、重复的与易错的。Vue.js 拥抱数据驱动的视图概念。通俗地讲，它意味着我们在普通 HTML 模板中使用特殊的语法将 DOM “绑定”到底层数据。一旦创建了绑定，DOM 将与数据保持同步。每当修改了数据，DOM 便相应地更新。这样我们应用中的逻辑就几乎都是直接修改数据了，不必与 DOM 更新搅在一起。这让我们的代码更容易撰写、理解与维护。
+
+//（1）下载安装vue.js
+
+//下载地址：开发版本或者生产版本（在开发时请用开发版本，遇到常见错误它会给出友好的警告。）
+
+//安装
+
+//在html文本中引入vue.js
+
+//<script type="text/javascript" src="js/vue.js"></script>
+
+//注意：Vue.js 不支持 IE8 及其以下版本，因为 Vue.js 使用了 IE8 不能实现的 ECMAScript 5 特性。 Vue.js 支持所有兼容 ECMAScript 5 的浏览器。
+
+ 
+
+	</script>
+</body>
+</html>
