@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>函数返回值</title>
+</head>
+<body>
+	<div id="app">
+		{{message}}
+		<br>
+		<input type="text" v-model="message()">
+	</div>
+	<script src="vue.js"></script>
+	<script>
+		new Vue({
+			el:"#app",
+			data:{
+				message:function(){
+					return 'hello,vue.js';
+				}
+			}
+		});
+	</script>
+</body>
+</html>
