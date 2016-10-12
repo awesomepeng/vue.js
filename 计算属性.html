@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>计算属性</title>
+</head>
+<body>
+	<div id="app">
+		<table>
+			<tr>
+				<td>a</td>
+				<td>b=a+1</td>
+			</tr>
+			<tr>
+				<td>{{a}}</td>
+				<td>{{b}}</td>
+			</tr>
+		</table>
+		<button @click="add">a=a+1</button>
+	</div>
+	<script src="vue.js"></script>
+	<script>
+		vm = new Vue({
+			el:"#app",
+			data:{
+				a:1
+			},
+			methods:{
+				add:function(){
+					this.a++;
+				}
+			},
+			computed:{
+				b:function(){
+					return this.a+1;
+				}
+			}
+		})
+		vm.$watch('b',function(val){
+			alert(val);
+		});
+	</script>
+</body>
+</html>
