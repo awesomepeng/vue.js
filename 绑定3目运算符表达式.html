@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>绑定3目运算符表达式</title>
+</head>
+<body>
+	<div id="div1">
+		<p>ok01 is true: {{ok01?"ok01":"cancel01"}}</p>
+		<p>ok02 is false: {{ok02?"ok02":"cancel02"}}</p>
+		<p>ok03 is "hello": {{ok03?"ok03":"cancel03"}}</p>
+		<p>ok04 is "": {{ok04?"ok04":"cancel04"}}</p>
+		<p>ok05 is "   ":{{ok05?"ok05":"cancel05"}}</p>
+	</div>
+	<script src="vue.js"></script>
+	<script>
+		new Vue({
+			el:"#div1",
+			data: {
+			    ok01: true,
+			    ok02: false,
+			    ok03: "hello ",
+			    ok04: "",
+			    ok05:"      "
+			}
+		})
+	</script>
+</body>
+</html>
