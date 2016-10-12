@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>过滤器</title>
+</head>
+<body>
+	<ul id="app">
+		<li v-for="item in fItems">
+			name:{{item.name|lowercase}}
+			price:{{item.price|currency"￥"}}
+		</li>
+	</ul>
+	<div id="div1">
+		{{html[0]|capitalize}}
+	</div>
+	<script src="vue.js"></script>
+	<script>
+		new Vue({
+			el:"#app",
+			data:{
+				fItems: [{
+				    name: "《精通JAVASCRIPT》",
+				    price: "38.80"
+				}, {
+				    name: "《精通PHP》",
+				    price: "28.80"
+				}, {
+				    name: "《精通Jquery》",
+				    price: "25.99"
+				}, {
+				    name: "《精通Vue》",
+				    price: "18.88"
+				}]
+					}
+		})	
+		new Vue({
+			el:"#div1",
+			data:{
+				html:"this is html",
+				css:"this is css",
+				jacascript:"this is javascript"
+			}
+		})
+	</script>
+</body>
+</html>
