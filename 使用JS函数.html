@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>使用JS函数</title>
+</head>
+<body>
+	<div id="div1">
+		{{message.split("").reverse().join("")}}
+	</div>
+	<script src="vue.js"></script>
+	<script>
+		new Vue({
+			el:"#div1",
+			data:{
+				message:"hello,world"
+			}
+
+		})
+	</script>
+</body>
+</html>
