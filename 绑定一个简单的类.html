@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>绑定一个简单的类用于切换颜色</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.red{
+			width: 200px;
+			height: 200px;
+			background: red;
+		}
+		.green{
+			width: 200px;
+			height: 200px;
+			background: green;
+		}
+	</style>
+</head>
+<body>
+	<div id="app">
+		<div :class="Background">背景颜色变换</div>
+	</div>
+	<button onclick="change()">改变颜色</button>
+	<script src="vue.js"></script>
+	<script>
+		vm = new Vue({
+			el:"#app",
+			data:{
+				Background:"red"
+			}
+		})
+		function change(){
+			vm.Background = "green";
+		}
+	</script>
+</body>
+</html>
