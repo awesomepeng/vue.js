@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>添加class</title>
+		<style>
+			.green{
+				background: green;
+			}
+			.red{
+				background: red;
+			}
+		</style>
+</head>
+<body>
+	<div id="div1">
+		<div :class="itsClass">背景颜色</div>
+		<button @click="change">变色</button>
+	</div>
+	<script src="vue.js"></script>
+	<script>
+		var vm = new Vue({
+			el:"#div1",
+			data:{
+				itsClass:{
+					green:true
+				}
+			},
+			methods:{
+				change:function(){
+					this.itsClass.green = false;
+					this.itsClass.red = true;
+				}
+			}
+		})
+		//点击按钮，虽然原本itsClass这个变量并没有red这个属性，但后续添加这个属性也会在该div里添加red这个class类名。所以，背景颜色从绿色变为红色。
+	</script>
+</body>
+</html>
