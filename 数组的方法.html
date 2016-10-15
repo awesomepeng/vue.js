@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数组的方法</title>
+</head>
+<body>
+	<div id="app">
+		<div v-for="a1 in a">{{a1}}</div>
+		<button @click="sort">sort排序</button>
+		<button @click="shift">shift删除第一个</button>
+		<button @click="splice">splice删除并插入</button>
+	</div>
+	<button onclick="add()">添加数组数据push</button>
+	<button onclick="pop()">删除最后一个pop</button>
+	<button onclick="unshift()">开头添加unshift</button>
+	<button onclick="reverse()">reverse数组的反转</button>
+
+
+
+	<script src="vue.js"></script>
+	<script>
+			vm = new Vue({
+				el:"#app",
+				data:{
+					a:[1,2,3,4,5]
+				},
+				methods:{
+					sort:function(){
+						this.a.sort();
+					},
+					shift:function(){
+						this.a.shift();
+					},
+					splice:function(){
+						this.a.splice(2,1,"aa");
+					}
+				}
+
+			})
+			function add(){
+				vm.a.push(Math.random());
+			}
+			function pop(){
+				vm.a.pop();
+			}
+			function unshift(){
+				vm.a.unshift(Math.random());
+			}
+			function reverse(){
+				vm.a.reverse();
+			}
+			//当利用以上方法变更数组时，被渲染的内容会实时更新,splice参数依次是，从第几个删除，删除几个，替换删除的元素。
+	</script>
+</body>
+</html>
