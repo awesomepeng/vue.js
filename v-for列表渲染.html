@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>v-for列表渲染</title>
+</head>
+<body>
+	<div id="app">
+		<div v-for="a1 in a">{{a1}} index is {{$index}}</div>
+	</div>
+	<div id="div1">
+		<ul>
+			<li v-for="i in items">
+					{{i}}
+			</li>
+		</ul>
+	</div>
+	<script src="vue.js"></script>
+	<script>
+		new Vue({
+			el:"#app",
+			data:{
+				a:['a',2,3]
+			}
+		})
+		new Vue({
+			el:"#div1",
+			data:{
+				items:{
+					a:"1",
+					b:"2",
+					c:"3"
+				}
+			}
+		})
+		//在标签里使用$index，即表示当前索引在v-for中的编号（从0开始）
+		//<li v-for="i in items">{{i}}</li>
+
+			//【1】items是一个对象或者数组；
+
+			//【2】该格式相当于for(var i in items){//略}
+
+			//【3】插值的i相当于items[i]
+
+			//【4】该li会被复制多个，然后依次被items[i]渲染，直到渲染完毕；
+	</script>
+</body>
+</html>
