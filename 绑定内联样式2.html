@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>绑定内联样式</title>
+</head>
+<body>
+	<div id="app">
+		<div :style="theStyle">内联样式</div>
+	</div>
+	<script src="vue.js"></script>
+	<script>
+		new Vue({
+			el:"#app",
+			data:{
+				theStyle:{
+					fontSize:"30px",
+					color:"red",
+					background:"#aaa"
+				}
+			}
+		})
+	</script>
+</body>
+</html>

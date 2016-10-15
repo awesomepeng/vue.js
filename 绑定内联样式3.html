@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>内联样式数组</title>
+</head>
+<body>
+	<div id="app">
+		<div :style="[aa,bb]">内联样式</div>
+	</div>
+	<script src="vue.js"></script>
+	<script>
+		new Vue({
+			el:"#app",
+			data:{
+				aa:{
+					fontSize:"30px"
+				},
+				dd:{
+					color:"red"
+				}
+			}
+		})
+		//唯一需要注意的是，假如有一个对象的值是无效的，那么这个标签的其他对象的值也无法作用到标签上
+	</script>
+</body>
+</html>
