@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>template v-for</title>
+</head>
+<body>
+	<div id="app">
+		<ul>
+			<template v-for="i in items">
+				<li>index is {{$index}}</li>
+				<li>Content is {{i}}</li>
+			</template>
+		</ul>
+	</div>
+	<script src="vue.js"></script>
+	<script>
+		new Vue({
+			el:"#app",
+			data:{
+				items:{
+					a:1,
+					b:2,
+					c:3
+				}
+			}
+		})
+		//template v-for 用于包裹多个标签的v-for
+
+        //简单来说，需要将多个标签都用v-for遍历，那么就需要用template标签。
+
+        //同样，template在实际渲染的时候不会出现，只是起到一个包裹作用。
+	</script>
+</body>
+</html>
