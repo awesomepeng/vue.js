@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>track-by="$index"</title>
+</head>
+<body>
+	<div id="app">
+				<div v-for="item in items" track-by="$index">{{item.name}}</div>
+
+	</div>
+	<button onclick="change()">改变元素</button>
+	<script src="vue.js"></script>
+	<script>
+		vm = new Vue({
+			el:"#app",
+			data:{
+				items:[
+					{name:"zhangsan",age:18},
+					{name:"lisi",age:20},
+					{name:"wangwu",age:25}
+				]
+			}
+		})
+		function change(){
+			vm.items = [{name:"zhangsan1",age:180},{name:"lisi1",age:200},{name:"wangwu1",age:251}];
+		}
+	//由于替换方式简单暴力（索引肯定是一样的），所以高效,但是也会付出一定的代价。因为这时 DOM 节点不再映射数组元素顺序的改变，不能同步临时状态（比如 <input> 元素的值）以及组件的私有状态。因此，如果 v-for 块包含 <input> 元素或子组件，要小心使用 track-by="$index"
+	</script>
+</body>
+</html>
