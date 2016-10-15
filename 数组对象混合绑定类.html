@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数组对象混合绑定类</title>
+	<style>
+		.G{
+			background: blue;
+		}
+		.R{
+			font-size:24px;
+		}
+		.S{
+			color:red;
+		}
+	</style>
+</head>
+<body>
+	<div id="app">
+		<div :class="[classG,{R:classR,S:classS}]">颜色</div>
+	</div>
+	<script src="vue.js"></script>
+	<script>
+		vm = new Vue({
+			el:"#app",
+			data:{
+				classG:"G",
+				classR:true,
+				classS:true
+			}
+		})
+		//【1】    数组形式（如classG），需要放置的是变量名，类名是变量名的值；
+
+//【2】    对象形式（如{R:classR,S:classS}），对象的key是类名，value用于控制该类是否存在（true或者false）；
+	</script>
+</body>
+</html>
