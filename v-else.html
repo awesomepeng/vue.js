@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>v-else</title>
+</head>
+<body>
+	<div id="app">
+		<div v-show="a">{{test}}</div>
+		<!-- <div>another</div>
+		<div v-else>{{bb}}</div> -->
+		<div v-show="!a">{{bb}}</div>
+	</div>
+	<script src="vue.js"></script>
+	<script>
+		new Vue({
+			el:"#app",
+			data:{
+				a:false,
+				test:"abc",
+				bb:"f"
+			}
+		})
+		//另外，标签之间需要连续，如以下，v-else则不能正常生效,另外，不要在组件的情况下使用v-else，而采用v-show="!变量名"来起到v-else的效果
+	</script>
+</body>
+</html>
