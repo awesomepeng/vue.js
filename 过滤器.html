@@ -42,6 +42,10 @@
 				jacascript:"this is javascript"
 			}
 		})
+		//capitalize这个过滤器，会将字符串的首字母大写,如果是汉字、数字、或者是本身首字母就大写了，则无反应.
+		//fMsg01: "{{ message | capitalize }}",
+        //fMsg02: "{{ message | filterA | filterB }}",过滤器可以串联
+        //fMsg02: "{{ message | filterA 'arg1' arg2 }}"过滤器也可以加参数
 	</script>
 </body>
 </html>
