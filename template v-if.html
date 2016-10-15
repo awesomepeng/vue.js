@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>template v-if</title>
+</head>
+<body>
+	<div id="app">
+		<template v-if="abc">
+			<div>{{abc[0]}}</div>
+			<div>{{abc[1]}}</div>
+			<div>{{abc[2]}}</div>
+		</template>
+	</div>
+	<script src="vue.js"></script>
+	<script>
+		new Vue({
+			el:"#app",
+			data:{
+				abc:[1,2,3]
+			}
+		})
+		//v-show不支持template的写法，dom存在于页面内，已经渲染、事件绑定完毕，区别只是是否显示
+	</script>
+</body>
+</html>
