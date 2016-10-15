@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数组的一些方法$set</title>
+</head>
+<body>
+	<div id="app">
+		<div v-for="item in items" track-by="$index">{{item}}</div>
+	</div>
+	<div id="div1">
+		<div v-for="aa1 in aa" track-by="$index">{{aa1.name}}</div>
+	</div>
+	<button onclick="change1()">改变了</button>
+	<button onclick="change()">改变</button>
+	<script src="vue.js"></script>
+	<script>
+		vm = new Vue({
+			el:"#app",
+			data:{
+				items:[1,6,2,7,0,3]
+			}
+		})
+		function change(){
+			vm.$data.items.$set(0,7);
+		}
+		vm1 = new Vue({
+			el:"#div1",
+			data:{
+				aa:[{name:"zhangsan",age:18},{name:"lisi",age:20},{name:"wangwu",age:30}]
+			}
+		})
+		function change1(){
+			vm1.$data.aa.$set(1,{name1:'zhaoliu'});
+		}
+		//在使用的时候不加track-by="$index"就不好使，???在传递数字的时候。
+	</script>
+</body>
+</html>
