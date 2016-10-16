@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动态过滤</title>
+</head>
+<body>
+	<div id="app">
+	    <input v-model="input"/>
+	    <p>请在输入框内输入内容，只会显示name符合的</p>
+	    <ul>
+	        <li v-for="(key,item) in items|filterBy input in List">age:{{item.age}},name:{{item.name}}</li>
+	    </ul>
+	    <button @click="change">点击搜索age</button>
+	</div>
+	<script src="vue.js"></script>
+	<script>
+	    var vm = new Vue({
+	        el: '#app',
+	        data: {
+	            input: "",
+	            List: "name",
+	            items: [
+	                {age: 1, name: "abc"},
+	                {age: 2, name: "ab"},
+	                {age: 3, name: "c"}
+	            ]
+	        },
+	        methods: {
+	            change: function () {
+	                this.List = ['age','name'];
+	            }
+	        }
+	    })
+	    //（1）初始过滤name，点击按钮过滤age；
+
+        //（2）List可以是字符串，也可以是数组;
+
+        //（3）动态改变依然会生效；
+
+ 
+	</script>
+	
+</body>
+</html>
