@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>表单控件select动态渲染</title>
+</head>
+<body>
+	<div id="app">
+		<p>动态选项，用v-four渲染</p>
+		<select v-model="select">
+			<option v-for="option in options" :value="option.value">
+				{{option.text}}
+			</option>
+		</select>
+		<span>Selected:{{select}}</span>
+	</div>
+	<script src="vue.js"></script>
+	<script>
+		new Vue({
+			el:"#app",
+			data:{
+				select:"",
+				options:[{text:"one",value:"A"},{text:"two",value:"B"},{text:"three",value:"C"},{text:"four",value:"D"}]
+			}
+		})
+	</script>
+</body>
+</html>
