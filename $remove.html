@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>$remove</title>
+</head>
+<body>
+	<div id="app">
+		<div v-for="item in items" track-by="$index">{{item.name}}</div>
+	</div>
+	<button onclick="push()">push</button>
+	<button onclick="remove()">$remove</button>
+	<script src="vue.js"></script>
+	<script>
+		var v = {name:"zhaoliu"};
+		vm = new Vue({
+			el:"#app",
+			data:{
+				items:[{name:"zhangsan"},{name:"lisi"},{name:"wangwu"}]
+			}
+		})
+		function push(){
+			vm.$data.items.push(v);
+		}
+		function remove(){
+			vm.$data.items.$remove(v);
+		}
+		//$remove()里面的参数只能这样去传，这点一定要注意。传 {name:"zhaoliu"}是错误的
+		//加上track-by="$index"可以加上多个。
+		//他相当于先用indexOf找到该对象的索引，再用splice来从数组中移除该对象。
+	</script>
+</body>
+</html>
