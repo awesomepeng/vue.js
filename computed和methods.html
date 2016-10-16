@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>computed和methods的区别</title>
+</head>
+<body>
+	<div id="app">
+		<div>{{a}}</div>
+		<div>{{b}}</div>
+	</div>
+	<script src="vue.js"></script>
+	<script>
+		vm = new Vue({
+			el:"#app",
+			data:{
+				a:1,
+				b:2
+			},
+			computed:{
+				aa:function(){
+					return this.a++;
+				},
+				bb:{
+					get:function(){
+						return this.a--;
+					},
+					set:function(val){
+						return this.a * val;
+					}
+				}
+			},
+			methods:{
+				cc:function(){
+					this.b++;
+				}
+			}
+		})
+		// console.log(vm.bb);
+		vm.aa;
+		vm.cc();
+		//computed计算属性得有返回值，而且为属性，methods函数不用写返回值。
+	</script>
+</body>
+</html>
