@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>表单控件#checkbox</title>
+</head>
+<body>
+	<div id="app">
+		<h4>#checkbox</h4>
+		<input type="checkbox" id="checkbox" v-model="checked">
+		<label for="checkbox">the checkbox is checked :{{checked}}</label>
+		<br>
+		<input type="checkbox" id="box01" v-model="checkedNames" value="box01">
+		<label for="box01">box01</label>
+		<input type="checkbox" id="box02" v-model="checkedNames" value="box02">
+		<label for="box01">box02</label>
+		<input type="checkbox" id="box03" v-model="checkedNames" value="box03">
+		<label for="box01">box03</label>
+		<span>CheckNames :{{checkedNames|json}}</span>
+	</div>
+	<script src="vue.js"></script>
+	<script>
+		new Vue({
+			el:"#app",
+			data:{
+				checked:false,
+				checkedNames:[]
+			}
+		})
+	</script>
+</body>
+</html>
