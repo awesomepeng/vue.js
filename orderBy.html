@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>orderBy</title>
+</head>
+<body>
+	<div id="app">
+		<ul>
+			<li v-for="item in items|orderBy 'age' 0">{{item.age}}</li>
+			<li v-for="item in items|orderBy 'name'-7">{{item.name}}</li>
+		</ul>
+	</div>
+	<script src="vue.js"></script>
+	<script>
+		new Vue({
+			el:"#app",
+			data:{
+				items:[{name:"zhangsan",age:18},{name:"lisi",age:30},{name:"wangwu",age:11}]
+			}
+		})
+	</script>
+</body>
+</html>
