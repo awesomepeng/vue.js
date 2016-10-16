@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>给v-on事件传一个固定参数</title>
+</head>
+<body>
+	<div id="app">
+		<button @click="test('a',$event,'c')">点击</button>
+	</div>
+	<script src="vue.js"></script>
+	<script>
+		new Vue({
+			el:"#app",
+			methods:{
+				test:function(message,b,c){
+					console.log(message);
+					console.log(b);
+					console.log(c);
+				}
+			}
+		})
+		//如果想传参数，则需要在括号里传入，如果想传入e,则需要在括号里写$event,这里的事件指的是MouseEvent;
+	</script>
+</body>
+</html>
