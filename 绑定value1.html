@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>绑定vue1</title>
+</head>
+<body>
+	<div id="app">
+		<h4>绑定Value</h4>
+			<input type="radio" id="man02" v-model="gender":value="man02">
+			<label for="man02">{{mam02}}</label>
+			<input type="radio" id="feman02" v-model="gender":value="feman02">
+			<label for="feman02">{{femam02}}</label>
+			<div>your gender is {{gender}}</div>
+	</div>
+	<script src="vue.js"></script>
+	<script>
+		new Vue({
+			el:"#app",
+			data:{
+				gender:"",
+				man02:"man",
+				feman02:"feman"
+			}
+		})
+	</script>
+</body>
+</html>
