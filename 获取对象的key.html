@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>获取对象的key和顺序遍历</title>
+</head>
+<body>
+	<div id="app">
+		<ul>
+			<!-- <li v-for="item in items" track-by="$index">{{$key}}:{{item}}</li> -->
+			<li v-for="(a,item) in items">{{a}}:{{$key}}:{{item}}</li>
+		</ul>
+	</div>
+	<script src="vue.js"></script>
+	<script>
+		new Vue({
+			el:"#app",
+			data:{
+				items:{
+					name:"zhangsan",
+					age:20,
+					sex:"男"
+				}
+			}
+		})
+		function aa(){
+			var a = {a: 1, b: 2, c: 3};
+			console.log(Object.keys(a));
+		}
+		aa();
+		//$key也支持别名，例如v-for="(a,item) in items"，其中a就是别名，与$key是不冲突的。
+		//函数aa是顺序遍历对象
+	</script>
+</body>
+</html>
