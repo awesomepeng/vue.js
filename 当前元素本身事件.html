@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>当前元素本身事件</title>
+</head>
+<body>
+	<div id="app">
+		<div id="parent" :style="{width: a,height:a,background:RED}" @click.capture="test">父元素
+			<div id="children" :style="{width: b,height:b,background:GREEN}">子元素</div>
+		</div>
+	</div>
+	<script src="vue.js"></script>
+	<script>
+		new Vue({
+			el:"#app",
+			data:{
+				a:"400px",
+				b:"200px",
+				RED:"red",
+				GREEN:"green"
+			},
+			methods:{
+				test:function(evt){
+					console.log(evt.target);
+				}
+			}
+		})
+	</script>
+</body>
+</html>
