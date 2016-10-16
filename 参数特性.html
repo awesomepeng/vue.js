@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>参数特性</title>
+</head>
+<body>
+	<div id="app">
+		<h4>#lazy</h4>
+		<input type="text" id="01" v-model="msg" lazy>
+		<label for="01">input value is {{msg}}</label>
+		<h4>#number</h4>
+		<input type="text" v-model="age"  id="age" number>
+		<label for="age">the age is {{age}} </label>
+		<div>{{typeof age}}</div>
+		<h4>#debounce</h4>
+		<input type="text" id="debounce" v-model="username" debounce="5000">
+		<label for="debounce">
+			username is {{username}}
+		</label>
+	</div>
+	<script src="vue.js"></script>
+	<script>
+		new Vue({
+			el:"#app",
+			data:{
+				msg:"hello",
+				age:12,
+				username:"vue"
+			}
+		})
+	</script>
+</body>
+</html>
