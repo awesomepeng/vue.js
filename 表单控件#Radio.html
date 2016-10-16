@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>表单控件#radio</title>
+</head>
+<body>
+	<div id="app">
+		<h4>#Radio</h4>
+		<input type="radio" id="man" value="man" v-model="picked">
+		<label for="man">man</label>
+		<br>
+		<input type="radio" id="feman" value="feman" v-model="picked">
+		<label for="feman">feman</label>
+		<br>
+		<span>Picked:{{picked}}</span>
+	</div>
+	<script src="vue.js"></script>
+	<script>
+		new Vue({
+			el:"#app",
+			data:{
+				picked:"man"
+			}
+		})
+	</script>
+</body>
+</html>
