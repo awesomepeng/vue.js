@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>表单控件#selected多选</title>
+</head>
+<body>
+	<div id="app">
+		<p>多选（按ctrl多选）</p>
+		<select v-model="drMutiSelected" multiple style="text-align: center; overflow: hidden; width: 50px;">
+		    <option selected="selected">A</option>
+		    <option>B</option>
+		    <option>C</option>
+		    <option>D</option>
+		</select>
+		<span>ctrl multiple selected:{{drMutiSelected}}</span>
+	</div>
+	<script src="vue.js"></script>
+	<script>
+		new Vue({
+			el:"#app",
+			data:{
+				drMutiSelected:""
+			}
+		})
+	</script>
+</body>
+</html>
