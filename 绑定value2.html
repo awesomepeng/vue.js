@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>绑定value2</title>
+</head>
+<body>
+	<div id="app">
+		<input type="checkbox" id="check02" v-model="toggle" :true-value:"check_true" :false-value="check_false">
+		<label for="check02">the checkbox value:{{toggle}}</label>
+	</div>
+	<script src="vue.js"></script>
+	<script>
+		new Vue({
+			el:"#app",
+			data:{
+				toggle:"un_checked",
+				check_true:"checked",
+				check_false:"un_checked"
+			}
+			
+		})
+	</script>
+</body>
+</html>
