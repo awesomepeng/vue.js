@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>使用内置过滤器filterBy2</title>
+</head>
+<body>
+	<div id="app">
+	    <input v-model="input"/>
+	    <p>请在输入框内输入内容，只会显示name符合的</p>
+	    <ul>
+	        <li v-for="(key,item) in items|filterBy input in 'name' 'age'">{{$index}}:age:{{item.age}},name:{{item.name}}</li>
+	    </ul>
+	</div>
+	<script src="vue.js"></script>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            input: "",
+            items: [
+                {age: 1, name: "abc"},
+                {age: 2, name: "ab"},
+                {age: 3, name: "c"}
+            ]
+        }
+    })
+</script>
+</body>
+</html>
