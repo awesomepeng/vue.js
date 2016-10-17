@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>组件实例化</title>
+</head>
+<body>
+	<div id="app">
+		<add></add>
+		<del></del>
+	</div>
+	<script src="vue.js"></script>
+	<script>
+		new Vue({
+			el:"#app",
+			components:{
+				"add":{
+					template:"<button>btn :{{btn}}</button>",
+					data:function(){
+						return {btn:"123"};
+					}
+				},
+				"del":{
+					template:"<button>btn:{{btn}}</button>",
+					data:function(){
+						return {btn:"456"};
+					}
+				}
+			}
+			
+		})
+		//2个按钮，第一个的值是123，第二个的值是456（虽然他们都是btn）
+	</script>
+</body>
+</html>
