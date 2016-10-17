@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>局部注册组件</title>
+</head>
+<body>
+	<div id="app">
+		<p><aa1></aa1></p>
+	</div>
+	<script src="vue.js"></script>
+	<script>
+		var aa = Vue.extend({
+			template:"<h4><p>这是一个test</p></h4>"
+		});
+		new Vue({
+			el:"#app",
+			components:{
+				"aa1":aa
+			}
+		})
+		//根据官方教程，这种方法（指局部注册），也适用于其他资源，比如指令、过滤器和过渡。
+	</script>
+</body>
+</html>
