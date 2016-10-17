@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>给组件添加data属性</title>
+</head>
+<body>
+	
+	<div id="app">
+		<add-button></add-button>
+	</div>
+    <div id="app2">
+    	<add-button></add-button>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        var obj = {btn: "123"};
+        var vm = new Vue({
+            el: '#app',
+            components: {
+                "add-button": {
+                    template: "<button>这是一个按钮{{btn}}</button>",
+                    data: function () {
+                        return obj;
+                    }
+                }
+            }
+        });
+
+        obj.btn = "456";
+        var vm2 = new Vue({
+            el: '#app2',
+            components: {
+                "add-button": {
+                    template: "<button>这是一个按钮{{btn}}</button>",
+                    data: function () {
+                        return obj;
+                    }
+                }
+            }
+        });
+        //两个data属性是一个属性,el属性用在Vue.extend()中时，也须是一个函数。
+    </script>
+</body>
+</html>

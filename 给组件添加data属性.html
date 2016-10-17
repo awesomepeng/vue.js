@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>给组件(局部组件)添加data属性</title>
+</head>
+<body>
+	<div id="app1">
+		<add-button></add-button>
+	</div>
+	<div id="app2"></div>
+	<script src="vue.js"></script>
+	<script>
+		new Vue({
+			el:"#app1",
+			components:{
+				 "add-button": {
+		            template: "<button>这是一个按钮{{btn}}</button>",
+		            data:function () {
+		                return {btn: "123"};
+            	    }
+			    }
+		   }
+		})
+	</script>
+</body>
+</html>
