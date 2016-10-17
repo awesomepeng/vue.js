@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>props绑定类型.once .sync</title>
+</head>
+<body>
+	<div id="app">
+
+	    父组件：
+
+	    <input v-model="val"><br/>
+
+	    子组件：
+
+	    <test v-bind:test-Val="val"></test>
+	    <test v-bind:test-Val.sync="val"></test>
+
+	</div>
+
+	<script src="vue.js"></script>
+
+	<script>
+	    var vm = new Vue({
+
+	        el: '#app',
+
+	        data: {
+
+	            val: 1
+
+	        },
+
+	        components: {
+
+	            "test": {
+
+	                props: ['testVal'],
+
+	                template: "<input v-model='testVal'/>"
+
+	            }
+
+	        }
+
+	    });
+	</script>
+</body>
+</html>
