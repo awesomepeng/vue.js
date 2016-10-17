@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>全局组件定义和注册结合</title>
+</head>
+<body>
+	<div id="app">
+		<add-button></add-button>
+	</div>
+	<script src="vue.js"></script>
+	<script>
+		Vue.component("add-button",{
+			template:"<button>这是一个按钮</button>"
+		});
+		new Vue({
+			el:"#app"
+		})
+	</script>
+</body>
+</html>
