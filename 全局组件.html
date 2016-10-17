@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>全局组件</title>
+</head>
+<body>
+	<div id="app">
+		<onclick></onclick>	
+	</div>
+	<script src="vue.js"></script>
+	<script>
+		var btn = Vue.extend({
+			template:"<button>这是一个按钮</button>"
+		});
+		Vue.component("onclick",btn);
+		new Vue({
+			el:"#app"
+		});
+		//如果在new Vue({})里面加template:"<onclick></onclick>"会报warn.
+	</script>
+</body>
+</html>
